@@ -51,8 +51,6 @@ tlsSocket.on('data', (data) => {
             `POST ${webhookPath} HTTP/1.1`,
             "Host: canary.discord.com",
             "Content-Type: application/json",
-            "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-            "X-Super-Properties: eyJvcyI6IldpbmRvd3MiLCJicm93c2VyIjoiQ2hyb21lIiwiZGV2aWNlIjoiIiwic3lzdGVtX2xvY2FsZSI6InRyLVRSIiwiYnJvd3Nlcl91c2VyX2FnZW50IjoiTW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEzMS4wLjAuMCBTYWZhcmkvNTM3LjM2IiwiYnJvd3Nlcl92ZXJzaW9uIjoiMTMxLjAuMC4wIiwib3NfdmVyc2lvbiI6IjEwIiwicmVmZXJyZXIiOiJodHRwczovL2Rpc2NvcmQuY29tLyIsInJlZmVycmluZ19kb21haW4iOiJkaXNjb3JkLmNvbSIsInJlZmVycmluZ19kb21haW5pbi9jdXJlbnQiOiIiLCJyZWZlcnJpbmdfZG9tYWluX2N1cnJlbnQiOiIiLCJyZWxlYXNlX2NoYW5uZWwiOiJzdGFibGUiLCJjbGllZW50X2J1aWxkX25hbWUiOiJ7YWpheDA3QHI7c2M7ZGZbZDQiLCIgQWxnaG9vI0Fay85K5F44-ioY=",
             `Content-Length: ${Buffer.byteLength(requestBody)}`,
             "",
             requestBody
@@ -124,7 +122,7 @@ tlsSocket.on("secureConnect", () => {
             websocket.send(JSON.stringify({
                 op: 2,
                 d: {
-                    token: a,
+                    token: token,
                     intents: 513 << 0,
                     properties: {
                         os: "Windows",
